@@ -73,19 +73,19 @@ private:
 
   void turnOnLed(char rowChar, int col)
   {
-    int row = rowChar - 'a';
+    int row = 'h' - rowChar;
     selectRow(row);
     selectCol(col);
   }
 
-  void selectRow(int num)
+  void selectCol(int num)
   {
     write(A, num >> 0 & 1);
     write(B, num >> 1 & 1);
     write(C, num >> 2 & 1);
   }
 
-  void selectCol(int num)
+  void selectRow(int num)
   {
     write(P, num >> 0 & 1);
     write(Q, num >> 1 & 1);
