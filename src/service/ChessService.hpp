@@ -9,21 +9,34 @@ class ChessService
 {
 private:
   PinService pinService;
-  CommunicationService communicatinService;
   Log logger;
 
 public:
   ChessService() {}
 
-  ChessService(PinService pinService, CommunicationService communicatinService)
+  ChessService(PinService pinService)
   {
     (*this).pinService = pinService;
-    (*this).communicatinService = communicatinService;
   }
 
   String readMessage()
   {
-    return communicatinService.readMessage();
+    return logger.readMessage();
+  }
+
+  void turnOnLeds(String leds)
+  {
+    pinService.turnOnLeds(leds);
+  }
+
+  void turnOffLeds()
+  {
+    pinService.turnOfLeds();
+  }
+
+  void alert(String status)
+  {
+    pinService.alert(status);
   }
 };
 
