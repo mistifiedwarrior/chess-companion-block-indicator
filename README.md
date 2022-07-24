@@ -18,3 +18,7 @@ Chess Companion Block Indicator
 ### checkmark before uploading the code.
 
 - [] set const variable in main.cpp
+
+sample input for serial monitor
+`blocks h1h2h3a2d8f8g7 CHECK
+blocks h1h2h3a2d8f8g7 END`
